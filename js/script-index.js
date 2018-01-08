@@ -7,6 +7,10 @@ $(document).ready( function(){
 
 	printNews()
 
+	renderActivities(activities)
+
+	renderActivity(activities)
+
 });
 
 function printNews() {
@@ -36,12 +40,14 @@ function renderRecipe(recipe) {
 }
 
 
-
 /*
 * Función que se encarga de pintar todas las actividades
 */
-function renderActivities(activitiesArray) {
-	console.log('Activities: ', activitiesArray);
+function renderActivities(activities) {
+	console.log('Activities: ', activities);
+	if (activities.length > 0) {
+		$(".wrapper-message").remove()
+	}
 }
 
 /*
@@ -50,7 +56,15 @@ function renderActivities(activitiesArray) {
 * archivo "templates/templates-activity.html"
 */
 function renderActivity(recipe) {
-	
+	for (var i = 0 ; i < recipe.length ; i++) {
+		var name = recipe[i].userName.indexOf(" ");
+		$(".list-activities").append("<div><img src='" 
+		+ recipe[i].userAvatar + "'><label>" 
+		+ recipe[i].userName.slice(0,name) + "<span> made " 
+		+ recipe[i].recipeName + "</span><p>: " 
+		+ recipe[i].text + "</p><p>-" 
+		+ recipe[i].place + "</p><img src='" + recipe[i].image + "'></div>")
+	}
 }
 
 
