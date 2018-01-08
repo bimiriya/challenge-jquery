@@ -18,7 +18,13 @@ function printNews() {
 * marcado el atributo "highlighted" como TRUE
 */
 function renderHighlightedRecipes(recipesArray) {
-	console.log('Recipes: ', recipesArray);
+	var highlightedTrue = 0;
+	for (var i = 0 ; i < recipesArray.length ; i++) {
+		if (recipesArray[i].highlighted === true) {
+			highlightedTrue++
+			renderRecipe(highlightedTrue)
+		}
+	}
 }
 
 /*
