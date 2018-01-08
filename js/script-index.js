@@ -36,7 +36,12 @@ function renderHighlightedRecipes(recipesArray) {
 * archivo "templates/templates-recipe.html"
 */
 function renderRecipe(recipe) {
-	$(".list-recipes").append("<h2>" + recipe.title + "</h2><p>by " + recipe.source.name + "</p>")
+	$(".list-recipes").append('<a class="item-recipe" href="#"><span class="attribution"><span class="title-recipe">' 
+	+ recipe.title + '</span><span class="metadata-recipe"><span class="author-recipe"> ' 
+	+ recipe.source.name + ' </span><span class="bookmarks-recipe"><span class="icon-bookmark"></span> </span></span></span><img src="../img/recipes/640x480/' 
+	+ recipe.source.url + '.jpg"></a>')
+
+	$(".list-recipes").append("<h2>" + recipe.title + "</h2><p>by " + recipe.source.name + "</p><img src='../img/recipes/640x480/" + recipe.name + ".jpg'>")
 }
 
 
@@ -58,12 +63,12 @@ function renderActivities(activities) {
 function renderActivity(recipe) {
 	for (var i = 0 ; i < recipe.length ; i++) {
 		var name = recipe[i].userName.indexOf(" ");
-		$(".list-activities").append("<div><img src='" 
-		+ recipe[i].userAvatar + "'><label>" 
-		+ recipe[i].userName.slice(0,name) + "<span> made " 
-		+ recipe[i].recipeName + "</span><p>: " 
-		+ recipe[i].text + "</p><p>-" 
-		+ recipe[i].place + "</p><img src='" + recipe[i].image + "'></div>")
+		$(".list-activities").append('<a href="#" class="item-activity"><span class="attribution"><span class="avatar"><img src="' 
+		+ recipe[i].userAvatar + '" class="image-avatar"></span><span class="meta"><span class="author">' 
+		+ recipe[i].userName.slice(0,name)  + '</span> made <span class="recipe">' 
+		+ recipe[i].recipeName + '</span>:' + recipe[i].text + '<span class="location">' 
+		+ recipe[i].place + '</span></span></span><div class="bg-image" style="background-image: url(' 
+		+ recipe[i].image +');"></div></a>')
 	}
 }
 
