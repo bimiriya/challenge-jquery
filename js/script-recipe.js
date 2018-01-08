@@ -2,10 +2,14 @@ $(document).ready(() => {
    console.log("tamo ready")
 
    $(".js-show-recipe").click(() => {
-       $("#page").removeClass("make")
+       $("#page").removeClass("make");
+       $(".js-show-recipe").addClass("active")
+       $(".js-show-make").removeClass("active")
    })
 
    $(".js-show-make").click(() => {
-       $("#page").addClass("make")
+       $("#page").addClass("make");
+       $(".js-show-make").addClass("active")
+       $(".js-show-recipe").removeClass("active")
    })
 })
