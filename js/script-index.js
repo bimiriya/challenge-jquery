@@ -36,12 +36,12 @@ function renderHighlightedRecipes(recipesArray) {
 * archivo "templates/templates-recipe.html"
 */
 function renderRecipe(recipe) {
-	$(".list-recipes").append('<a class="item-recipe" href="#"><span class="attribution"><span class="title-recipe">' 
-	+ recipe.title + '</span><span class="metadata-recipe"><span class="author-recipe"> ' 
-	+ recipe.source.name + ' </span><span class="bookmarks-recipe"><span class="icon-bookmark"></span> </span></span></span><img src="../img/recipes/640x480/' 
-	+ recipe.source.url + '.jpg"></a>')
+	/*$(".list-recipes").append("<a class='item-recipe' href='#'><span class='attribution'><span class='title-recipe'>" 
+	+ recipe.title + "</span><span class='metadata-recipe'><span class='author-recipe'>" 
+	+ recipe.source.name + "</span><span class='bookmarks-recipe'><span class='icon-bookmark'></span></span></span></span><img src='../img/recipes/640x480/" 
+	+ recipe.source.url + ".jpg'></a>")*/
 
-	$(".list-recipes").append("<h2>" + recipe.title + "</h2><p>by " + recipe.source.name + "</p><img src='../img/recipes/640x480/" + recipe.name + ".jpg'>")
+	$(".list-recipes").append("<h2>" + recipe.title + "</h2><p>by " + recipe.source.name + "</p><img src='img/recipes/640x480/" + recipe.name + ".jpg'>")
 }
 
 
