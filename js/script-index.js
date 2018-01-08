@@ -18,11 +18,9 @@ function printNews() {
 * marcado el atributo "highlighted" como TRUE
 */
 function renderHighlightedRecipes(recipesArray) {
-	var highlightedTrue = 0;
 	for (var i = 0 ; i < recipesArray.length ; i++) {
 		if (recipesArray[i].highlighted === true) {
-			highlightedTrue++
-			renderRecipe(highlightedTrue)
+			renderRecipe(recipesArray[i])
 		}
 	}
 }
@@ -34,7 +32,7 @@ function renderHighlightedRecipes(recipesArray) {
 * archivo "templates/templates-recipe.html"
 */
 function renderRecipe(recipe) {
-	console.log('Voy a pintar la receta: ', recipe);
+	$(".list-recipes").append("<h2>" + recipe.title + "</h2><p>by " + recipe.source.name + "</p>")
 }
 
 
